@@ -1,0 +1,144 @@
+(*
+Anonymous Authors
+*)
+
+(*--Dolev-Yao model Open Channels--*)
+free dr:channel. (*Public Channel between UAV and receiver*)
+free ra:channel. (*Public Channel between receiver and authority*)
+
+(*--Private Channel between UAV A and the authority Auth--*)
+free da:channel [private]. 
+
+free IDA: bitstring [private].
+
+(*--Types--*)
+type host.
+type alt.
+type lon.
+type lat.
+type nonce.
+type ts.
+type otk.
+
+(*--Hosts--*)
+free uav,rec,autho: host.
+
+(*--UAV One Time Key--*)
+free otkA: otk [private].
+
+(*--Public and Private Key--*)
+type pkey.
+type skey.
+
+(* Auxiliary Functions *)
+fun pk(skey): pkey.
+fun hash(bitstring):bitstring.
+(* fun hmac(otk,bitstring):bitstring. *)
+
+
+(*--Encryption--*)
+fun aenc(otk, pkey): bitstring.
+reduc forall m: otk, k: skey; adec(aenc(m, pk(k)), k) = m.
+
+fun senc (bitstring, otk):bitstring.
+reduc forall m:bitstring, k:otk; sdec(senc(m,k),k) = m.
+
+(*--Digital Signatures--*)
+fun sign(bitstring, skey): bitstring.
+reduc forall m: bitstring, k: skey; getmess(sign(m, k)) = m.
+reduc forall m: bitstring, k: skey; checksign(sign(m, k), pk(k)) = m.
+
+(*--Check timestamp freshness operation--*)
+fun freshness(ts, bool): bool
+reduc forall T: ts; freshness(T, true) = true
+otherwise forall T: ts; freshness(T, false) = false.
+
+
+(*Events*)
+event acceptUAV(bitstring).
+event termAuth(bitstring).
+
+(* Authentication *)
+query id: bitstring; event(termAuth(id)) ==> event(acceptUAV(id)).
+
+(* Test if IDA is secret *)
+query attacker(IDA).
+
+noninterf IDA.
+
+(* The UAV *)
+let uavA (skA:skey, pA:pkey) = 
+  (*UAV Registration*)
+  out(da, (IDA,pA));
+  in(da, (PAuth:pkey));
+
+  (* Acquire Location Information *)
+  new altA: alt;
+  new lonA: lon;
+  new latA: lat;
+  new tA: ts;
+  new vA: nonce;
+
+  let hA      = hash((IDA, latA, lonA, altA, tA, vA)) in
+  let deltaA  = sign(hA, skA) in
+  let cA      = senc((IDA,deltaA,tA,vA), otkA) in
+  let roA     = aenc(otkA, PAuth) in
+
+  event acceptUAV(IDA);
+
+  out(dr, ((cA,roA,latA,lonA,altA,tA), freshness(tA, true))).
+
+
+  (* A Generic Receiver *)
+let receiver () = 
+  in(dr, ((cA:bitstring,roA:bitstring,latA:lat,lonA:lon,altA:alt,tA:ts), checkT:bool));
+
+  if checkT = true then
+  out(ra, ((cA,roA,latA,lonA,altA,tA), freshness(tA, true))).
+
+(* A generic Receiver *)  
+
+let auth (pAuth:skey, PAuth:pkey) = 
+  (*UAV Registration*)
+  in(da, ((id:bitstring, pba:pkey)));
+  out(da, PAuth);
+
+
+  in(ra, ((cA:bitstring,roA:bitstring,latA:lat,lonA:lon,altA:alt,tA:ts), checkT:bool));
+
+  if checkT = true then
+  
+  let otkAd     = adec(roA, pAuth) in
+  let (IDA_d:bitstring, deltaA_d:bitstring, tA_d:ts, vA_d:nonce)     = sdec(cA, otkAd) in
+  
+  if ((IDA_d = IDA) && (tA = tA_d)) then
+    
+  let sigA = checksign(deltaA_d, pba) in
+  let hA_d = getmess(deltaA_d) in
+
+  if hA_d = hash((IDA_d, latA, lonA, altA, tA, vA_d)) then
+      
+  event termAuth(IDA).
+
+
+let arid =
+  ! new pAuth: skey;
+  ! new pA: skey;
+  
+  ! let PAuth = pk(pAuth) in
+  ! let PA = pk(pA) in
+  
+  ! (UAVA(pA, PA) | receiver() | auth(pAuth, PAuth)).
+  
+process arid
+
+(*--------------------------------------------------------------
+Verification summary:
+
+Query event(termAuth(id_1)) ==> event(acceptUAV(id_1)) is true.
+
+Query not attacker(IDA[]) is true.
+
+Non-interference IDA is true.
+
+-------------------------------------------------------------*)
