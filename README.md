@@ -5,6 +5,11 @@
 # Anonymous Remote IDentification of Unmanned Aerial Vehicles (ARID)
 ARID provides anonymous remote identification for drones and UAVs.
 
+## How to Compile
+To compile from source or use a different security level for ```arid.c```, select the correspondent elliptic curve and use the following command:
+```arm-linux-gnueabihf-gcc -I ./mavlink-solo/build/common/ -I /usr/local/openssl/include/ -I /usr/local/include/ -L /usr/local/openssl/lib/ -mcpu=cortex-a9 -o arid arid.c -lcrypto -lpthread -Wl,--no-as-needed -ldl -static```
+
+
 ## Credits
 Credits go to the original authors of EC ElGamal protocol (blanclux) and OpenSSL 1.0.0 library for ARM whose original efforts made this possible.
 
