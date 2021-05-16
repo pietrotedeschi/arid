@@ -11,7 +11,7 @@ To compile from source or use a different security level for ```arid.c```, selec
 
 ## Hardware Requirements
 - A laptop equipped with GNU/Linux distro, and the GNU Arm Embedded Toolchain.
-- A programmable drone (like the 3DR Solo Drone) that supports ELF 32-bit LSB executable.
+- A programmable drone (like the 3DR Solo Drone adopted in this contribution) that supports ELF 32-bit LSB executable.
 - (optional) An ALFA Card AWUS036NH connected to the laptop.
 
 ## Security Level
