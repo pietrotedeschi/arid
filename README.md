@@ -41,7 +41,7 @@ In order to set a different security level, you can uncomment the correspondent 
 </table>
 
 ## Change UAV/Drone MAC Address
-It is easy to change the UAV/Drone MAC address. You just need to open an SSH session with the drone and execute the run the script ```change_mac.sh``` before the flight (in order to don't reveal to adversaries your legitimate MAC address).
+It is easy to change the UAV/Drone MAC address. You just need to open an SSH session with the drone and execute the script ```change_mac.sh``` inside the drone before the flight. In this case you will not reveal your legitimate MAC address to potential adversaries.
 ```
 ifconfig wlan0 down
 ifconfig wlan0 hw ether 12:34:56:78:12:34
