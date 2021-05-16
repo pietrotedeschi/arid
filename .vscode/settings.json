@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "*.pv": "ocaml",
+        "termios.h": "c",
+        "arid.h": "c",
+        "unistd.h": "c"
+    }
+}
