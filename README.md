@@ -26,19 +26,19 @@ In order to set a different security level, you can uncomment the correspondent 
   </tr>
   <tr>
     <td style="text-align:center">80</td>
-     <td>With the elliptic curve _secp160r1_ the total size of the MavLink payload is 147 bytes.</td>
+     <td>With the elliptic curve <i>secp160r1</i> the total size of the MavLink payload is 147 bytes.</td>
   </tr>
   <tr>
     <td style="text-align:center">96</td>
-    <td>With the elliptic curve _secp192k1_ the total size of the payload is 163 bytes.</td>
+    <td>With the elliptic curve <i>secp192k1</i> the total size of the payload is 163 bytes.</td>
   </tr>
   <tr>
     <td style="text-align:center">112</td>
-    <td>With the elliptic curve _secp224k1_ the total size of the payload is 179 bytes.</td>
+    <td>With the elliptic curve <i>secp224k1</i> the total size of the payload is 179 bytes.</td>
   </tr>
   <tr>
     <td style="text-align:center">128</td>
-    <td>With the elliptic curve _secp256k1_ the total size of the payload is 195 bytes.</td>
+    <td>With the elliptic curve <i>secp256k1</i> the total size of the payload is 195 bytes.</td>
   </tr>
 </table>
 
