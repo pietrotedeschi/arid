@@ -9,6 +9,31 @@ ARID provides anonymous remote identification for drones and UAVs.
 To compile from source or use a different security level for ```arid.c```, select the correspondent elliptic curve and use the following command:
 ```arm-linux-gnueabihf-gcc -I ./mavlink-solo/build/common/ -I /usr/local/openssl/include/ -I /usr/local/include/ -L /usr/local/openssl/lib/ -mcpu=cortex-a9 -o arid arid.c -lcrypto -lpthread -Wl,--no-as-needed -ldl -static```
 
+## Security Level
+In order to set a different security level, you can uncomment the correspondent elliptic curve (and the relative buffer). Following table provides information about the different security levels. Finally, compile the program and upload it on the drone.
+
+<table>
+  <tr>
+    <th style="text-align:center"><b>Security Level (bits)</b></th>
+    <th><i><b>Description</b></i></th>
+  </tr>
+  <tr>
+    <td style="text-align:center">80</td>
+     <td>With the elliptic curve _secp160r1_ the total size of the MavLink payload is 147 bytes.</td>
+  </tr>
+  <tr>
+    <td style="text-align:center">96</td>
+    <td>With the elliptic curve _secp192k1_ the total size of the payload is 163 bytes.</td>
+  </tr>
+  <tr>
+    <td style="text-align:center">112</td>
+    <td>With the elliptic curve _secp224k1_ the total size of the payload is 179 bytes.</td>
+  </tr>
+  <tr>
+    <td style="text-align:center">128</td>
+    <td>With the elliptic curve _secp256k1_ the total size of the payload is 195 bytes.</td>
+  </tr>
+</table>
 
 ## Credits
 Credits go to the original authors of EC ElGamal protocol (blanclux) and OpenSSL 1.0.0 library for ARM whose original efforts made this possible.
