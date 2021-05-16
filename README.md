@@ -4,13 +4,15 @@
 
 # Anonymous Remote IDentification of Unmanned Aerial Vehicles (ARID)
 ARID provides anonymous remote identification for drones and UAVs.
+The details will be provided in the paper.
 
 ## How to Compile
 To compile from source or use a different security level for ```arid.c```, select the correspondent elliptic curve and use the following command:
 ```arm-linux-gnueabihf-gcc -I ./mavlink-solo/build/common/ -I /usr/local/openssl/include/ -I /usr/local/include/ -L /usr/local/openssl/lib/ -mcpu=cortex-a9 -o arid arid.c -lcrypto -lpthread -Wl,--no-as-needed -ldl -static```
 
 ## Hardware Requirements
-- A laptop equipped with GNU/Linux distro, and the GNU Arm Embedded Toolchain.
+In order to setup the environment, you need the following equipment:
+- A laptop equipped with GNU/Linux distro, the GNU Arm Embedded Toolchain, and a software like Wireshark/tcpdump to verify the received packets.
 - A programmable drone (like the 3DR Solo Drone adopted in this contribution) that supports ELF 32-bit LSB executable.
 - (optional) An ALFA Card AWUS036NH connected to the laptop.
 
