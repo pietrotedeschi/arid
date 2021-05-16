@@ -3,6 +3,7 @@
 </p>
 
 # Anonymous Remote IDentification of Unmanned Aerial Vehicles (ARID)
+ARID provides anonymous remote identification for drones and UAVs.
 
 ## Credits
 Credits go to the original authors of EC ElGamal protocol (blanclux) and OpenSSL 1.0.0 library for ARM whose original efforts made this possible.
