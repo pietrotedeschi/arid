@@ -9,6 +9,11 @@ ARID provides anonymous remote identification for drones and UAVs.
 To compile from source or use a different security level for ```arid.c```, select the correspondent elliptic curve and use the following command:
 ```arm-linux-gnueabihf-gcc -I ./mavlink-solo/build/common/ -I /usr/local/openssl/include/ -I /usr/local/include/ -L /usr/local/openssl/lib/ -mcpu=cortex-a9 -o arid arid.c -lcrypto -lpthread -Wl,--no-as-needed -ldl -static```
 
+## Hardware Requirements
+- A laptop equipped with GNU/Linux distro, and the GNU Arm Embedded Toolchain.
+- A programmable drone (like the 3DR Solo Drone) that supports ELF 32-bit LSB executable.
+- (optional) An ALFA Card AWUS036NH connected to the laptop.
+
 ## Security Level
 In order to set a different security level, you can uncomment the correspondent elliptic curve (and the relative buffer). Following table provides information about the different security levels. Finally, compile the program and upload it on the drone.
 
