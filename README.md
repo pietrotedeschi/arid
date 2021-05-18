@@ -50,6 +50,13 @@ In order to set a different security level, you can uncomment the correspondent 
 #define BUFFER_LENGTH 4 + 40 + 9 + 4 + 10
 ```
 
+## Network Broadcast Address
+The ARID frame can also be broadcast on all attached networks by sending to the special address ```INADDR_BROADCAST```.
+```C
+targetAddr->sin_addr.s_addr = INADDR_BROADCAST;
+//targetAddr->sin_addr.s_addr = inet_addr("10.1.1.255");
+```
+
 ## Change UAV/Drone MAC Address
 It is easy to change the UAV/Drone MAC address. You just need to open an SSH session with the drone and execute the script ```change_mac.sh``` inside the drone before the flight. In this case you will not reveal your legitimate MAC address to potential adversaries.
 ```sh
