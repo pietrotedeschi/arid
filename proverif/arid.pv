@@ -128,7 +128,7 @@ let arid =
   ! let PAuth = pk(pAuth) in
   ! let PA = pk(pA) in
   
-  ! (UAVA(pA, PA) | receiver() | auth(pAuth, PAuth)).
+  ! (uavA(pA, PA) | receiver() | auth(pAuth, PAuth)).
   
 process arid
 
