@@ -14,7 +14,9 @@ arm-linux-gnueabihf-gcc -I ./mavlink-solo/build/common/ -I /usr/local/openssl/in
 
 ## Hardware Requirements
 In order to setup the environment, you need the following equipment:
-- A laptop equipped with GNU/Linux distro, the GNU Arm Embedded Toolchain, and a software like Wireshark/tcpdump to verify the received packets.
+- A laptop equipped with GNU/Linux distro, the GNU Arm Embedded Toolchain: ```sudo apt-get install gcc-arm-linux-gnueabihf g++-arm-linux-gnueabihf```
+- Check if the UAV/Drone supports the ```libssl.so.1.0.0```. In this case you need to compile the OpenSSL 1.0 for ARM and install the library on the UAV/Drone.
+- A software like Wireshark/tcpdump to verify the received packets on your laptop ``` sudo apt-get install -y tcpdump wireshark```.
 - A programmable drone (like the 3DR Solo Drone adopted in this contribution) that supports ELF 32-bit LSB executable.
 - (optional) An ALFA Card AWUS036NH connected to the laptop.
 
