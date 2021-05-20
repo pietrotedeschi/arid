@@ -19,6 +19,9 @@ To compile from source or use a different security level for ```arid.c```, selec
 arm-linux-gnueabihf-gcc -I ./mavlink-solo/build/common/ -I /usr/local/openssl/include/ -I /usr/local/include/ -L /usr/local/openssl/lib/ -mcpu=cortex-a9 -o arid arid.c -lcrypto -lpthread -Wl,--no-as-needed -ldl -static
 ```
 
+### Execution
+You can run ARID on your computer, or directly on the drone with ```./arid```. If you want to automatize the run of the protocol on the drone, you need to edit the file ```/etc/rc.local``` (or the file ```~/.bashrc```) using the editor of your choice with root permissions and inserting: ```sudo ./arid &```.
+
 ## Hardware Requirements
 In order to setup the environment, you need the following equipment:
 - A laptop equipped with GNU/Linux distro, the GNU Arm Embedded Toolchain: ```sudo apt-get install gcc-arm-linux-gnueabihf g++-arm-linux-gnueabihf```
