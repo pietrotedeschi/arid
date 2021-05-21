@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./figures/ARID_Logo.png" alt="ARID" width="150">
+  <img src="https://github.com/pietrotedeschi/arid/blob/master/figures/ARID_Logo.png" alt="ARID" width="150">
 </p>
 
 # Anonymous Remote IDentification of Unmanned Aerial Vehicles (ARID)
