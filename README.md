@@ -81,7 +81,7 @@ ifconfig
 ## Formal verification with ProVerif
 The security properties of `ARID` have been verified formally and experimentally by using the open-source tool <a href="https://prosecco.gforge.inria.fr/personal/bblanche/proverif/">ProVerif 2.02pl1</a>, demonstrating enhanced security protection with respect to state-of-the-art approaches.
 
-In order to test the security properties, download the file <a href="./proverif/arid.pv">arid.pv</a> and run: `./proverif arid.pv | grep "RESULT"`.
+In order to test the security properties, download the file <a href="https://github.com/pietrotedeschi/arid/blob/master/proverif/arid.pv">arid.pv</a> and run: `./proverif arid.pv | grep "RESULT"`.
 
 <p align="center">
   <img src="https://github.com/pietrotedeschi/arid/blob/master/figures/proverif.png" alt="ARID" width="700">
