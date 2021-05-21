@@ -6,7 +6,7 @@
 ARID provides anonymous remote identification for drones and UAVs.
 
 <p align="center">
-  <img src="https://github.com/pietrotedeschi/arid/figures/scenario_arid.jpg" alt="ARID" width="900">
+  <img src="https://github.com/pietrotedeschi/arid/tree/master/figures/scenario_arid.jpg" alt="ARID" width="900">
 </p>
 
 Our implementation, whose source code has been publicly released as open-source, leverages popular libraries and tools, such as the Poky OS (a reference distribution of the Yocto Project), MAVLink, and OpenSSL, supported by the large variety of commercial UAVs. These features contribute to enhancing the impact of ARID, demonstrating its deployability to improving the quality of the provided security services in real-world UAV systems.
