@@ -1,11 +1,13 @@
 <p align="center">
-  <img src="https://github.com/pietrotedeschi/arid/blob/master/figures/ARID_Logo.png" alt="ARID" width="150">
+  <img src="https://github.com/pietrotedeschi/arid/blob/master/figures/ARID_Logo.png" alt="ARID LOGO" width="150">
 </p>
 
 # Anonymous Remote IDentification of Unmanned Aerial Vehicles (ARID)
 ARID provides anonymous remote identification for drones and UAVs.
 
-![ARID](https://github.com/pietrotedeschi/arid/blob/master/figures/scenario_arid.jpg "ARID")
+<p align="center">
+  <img src="https://github.com/pietrotedeschi/arid/blob/master/figures/scenario_arid.jpg" alt="ARID" width="900">
+</p>
 
 Our implementation, whose source code has been publicly released as open-source, leverages popular libraries and tools, such as the Poky OS (a reference distribution of the Yocto Project), MAVLink, and OpenSSL, supported by the large variety of commercial UAVs. These features contribute to enhancing the impact of ARID, demonstrating its deployability to improving the quality of the provided security services in real-world UAV systems.
 
@@ -82,7 +84,7 @@ The security properties of `ARID` have been verified formally and experimentally
 In order to test the security properties, download the file <a href="./proverif/arid.pv">arid.pv</a> and run: `./proverif arid.pv | grep "RESULT"`.
 
 <p align="center">
-  <img src="./figures/proverif.png" alt="ARID" width="700">
+  <img src="https://github.com/pietrotedeschi/arid/blob/master/figures/proverif.png" alt="ARID" width="700">
 </p>
 
 ## Credits
