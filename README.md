@@ -105,4 +105,4 @@ Any actions and or activities related to the material contained within this gith
 Anonymous Authors
 
 ## License
-```ARID``` is released under the GNU General Public License v3.0 <a href="LICENSE">license</a>.
+```ARID``` is released under the GNU General Public License v3.0 <a href="https://github.com/pietrotedeschi/arid/blob/master/LICENSE">license</a>.
