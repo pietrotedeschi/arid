@@ -106,7 +106,7 @@ print("Completed")
 - Open Wireshark on your network-card interface to see the broadcasted packets.
 
 <p align="center">
-  <img src="https://github.com/pietrotedeschi/arid/blob/master/figures/wireshark_arid.png" alt="ARID_wireshark" width="900">
+  <img src="https://github.com/pietrotedeschi/arid/blob/master/figures/wireshark_blind.png" alt="ARID_wireshark" width="900">
 </p>
 
 ## Formal verification with ProVerif
