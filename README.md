@@ -77,6 +77,48 @@ ifconfig wlan0 hw ether 12:34:56:78:12:34
 ifconfig wlan0 up
 ifconfig
 ```
+## No drone? No worries!
+You can simulate a drone on our computer with dronekit-sitl.
+- Install dronekit-sitl with ````pip install dronekit-sitl```
+- Start dronekit with the following syntax (for details, please type dronekit-sitl -h): ````dronekit-sitl plane-3.3.0 --home=-35.363261,149.165230,584,353```
+- In a second terminal spawn an instance of MAVProxy to forward messages from TCP 127.0.0.1:5760 to other UDP ports like 127.0.0.1:14550 and 127.0.0.1:14551: ```mavproxy.py --master tcp:127.0.0.1:5760 --sitl 127.0.0.1:5501 --out 127.0.0.1:14550 --out 127.0.0.1:14551```
+- First connect and start the python script:
+```python
+print "Start simulator (SITL)"
+import dronekit_sitl
+sitl = dronekit_sitl.start_default()
+connection_string = sitl.connection_string()
+
+# Import DroneKit-Python
+from dronekit import connect, VehicleMode
+
+# Connect to the Vehicle.
+print("Connecting to vehicle on: %s" % (connection_string,))
+vehicle = connect(connection_string, wait_ready=True)
+
+# Get some vehicle attributes (state)
+print "Get some vehicle attribute values:"
+print " GPS: %s" % vehicle.gps_0
+print " Battery: %s" % vehicle.battery
+print " Last Heartbeat: %s" % vehicle.last_heartbeat
+print " Is Armable?: %s" % vehicle.is_armable
+print " System status: %s" % vehicle.system_status.state
+print " Mode: %s" % vehicle.mode.name    # settable
+
+# Close vehicle object before exiting script
+vehicle.close()
+
+# Shut down simulator
+sitl.stop()
+print("Completed")
+```
+- Start the ARID protocol on your computer as: ```./arid``` (hint: set the ```targetAddr->sin_addr.s_addr = INADDR_BROADCAST;```)
+- Open Wireshark on your network-card interface to see the broadcasted packets.
+
+
+<p align="center">
+  <img src="https://github.com/pietrotedeschi/arid/blob/master/figures/wireshark.png" alt="ARID_wireshark" width="900">
+</p>
 
 ## Formal verification with ProVerif
 The security properties of `ARID` have been verified formally and experimentally by using the open-source tool <a href="https://prosecco.gforge.inria.fr/personal/bblanche/proverif/">ProVerif 2.02pl1</a>, demonstrating enhanced security protection with respect to state-of-the-art approaches.
