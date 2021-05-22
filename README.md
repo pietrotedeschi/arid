@@ -79,8 +79,8 @@ ifconfig
 ```
 ## No drone? No worries!
 You can simulate a drone on our computer with dronekit-sitl.
-- Install dronekit-sitl with ````pip install dronekit-sitl```
-- Start dronekit with the following syntax (for details, please type dronekit-sitl -h): ````dronekit-sitl plane-3.3.0 --home=-35.363261,149.165230,584,353```
+- Install dronekit-sitl with ```pip install dronekit-sitl```
+- Start dronekit with the following syntax (for details, please type dronekit-sitl -h): ```dronekit-sitl plane-3.3.0 --home=-35.363261,149.165230,584,353```
 - In a second terminal spawn an instance of MAVProxy to forward messages from TCP 127.0.0.1:5760 to other UDP ports like 127.0.0.1:14550 and 127.0.0.1:14551: ```mavproxy.py --master tcp:127.0.0.1:5760 --sitl 127.0.0.1:5501 --out 127.0.0.1:14550 --out 127.0.0.1:14551```
 - First connect and start the python script:
 ```python
