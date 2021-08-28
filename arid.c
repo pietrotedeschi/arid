@@ -42,7 +42,7 @@ int main()
     BIGNUM *prime = BN_new();
     EC_GROUP_get_curve_GFp(curve, prime, NULL, NULL, ctx);
     int curve_size = BN_num_bits(prime);          // Curve size in bits
-    int curve_size_byte = BN_num_bits(prime) / 8; // Curve size in bits
+    int curve_size_byte = BN_num_bits(prime) / 8; // Curve size in bytes
     unsigned int Lf = (curve_size + 7) / 8;
 
     if (curve_size < 160)
