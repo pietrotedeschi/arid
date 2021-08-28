@@ -133,7 +133,9 @@ Contributions are what make the open source community such an amazing place to b
 Any actions and or activities related to the material contained within this github repository is solely your responsibility. The misuse of the information in this repository can result in criminal charges brought against the persons in question. The author(s) will not be held responsible in the event any criminal charges be brought against any individuals misusing the information in this repository to break the law.
 
 ## Developers
-Anonymous Authors
+- Pietro Tedeschi (ptedeschi@hbku.edu.qa)
+
+Division of Information and Computing Technology (ICT), College of Science and Engineering (CSE) - Hamad Bin Khalifa University (HBKU), Doha, Qatar
 
 ## License
 ```ARID``` is released under the GNU General Public License v3.0 <a href="https://github.com/pietrotedeschi/arid/blob/master/LICENSE">license</a>.
