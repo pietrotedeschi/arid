@@ -4,7 +4,7 @@
  * Licensed under the ARID license (the "License").  You may not use
  * this file except in compliance with the License.  You can obtain a copy
  * in the file LICENSE in the source distribution or at
- * https://[LINK HERE]
+ * https://github.com/pietrotedeschi/arid/blob/master/LICENSE
  */
 
 #include "arid.h"
