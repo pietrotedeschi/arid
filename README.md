@@ -137,7 +137,7 @@ Any actions and or activities related to the material contained within this gith
 
 Division of Information and Computing Technology (ICT), College of Science and Engineering (CSE) - Hamad Bin Khalifa University (HBKU), Doha, Qatar
 
-## Cite our work
+## How to Cite ARID
 ```
 @INPROCEEDINGS{tedeschi_acsac_2021,
   author={Tedeschi, Pietro and Sciancalepore, Savio and Pietro, Roberto Di},
