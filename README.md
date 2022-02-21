@@ -11,7 +11,7 @@ ARID provides anonymous remote identification for drones and UAVs.
 
 Our implementation, whose source code has been publicly released as open-source, leverages popular libraries and tools, such as the Poky OS (a reference distribution of the Yocto Project), MAVLink, and OpenSSL, supported by the large variety of commercial UAVs. These features contribute to enhancing the impact of ARID, demonstrating its deployability to improving the quality of the provided security services in real-world UAV systems.
 
-The details are provided in the paper that has been officially accepted for presentation in the 2021 Annual Computer Security Applications Conference (ACSAC).
+The details are provided in the [paper](https://dl.acm.org/doi/abs/10.1145/3485832.3485834) that has been officially accepted for presentation in the 2021 Annual Computer Security Applications Conference (ACSAC)
 
 ## How to Compile
 To compile from source or use a different security level for ```arid.c```, select the correspondent elliptic curve and use the following command:
