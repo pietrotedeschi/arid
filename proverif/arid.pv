@@ -98,7 +98,7 @@ let receiver () =
   if checkT = true then
   out(ra, ((cA,roA,latA,lonA,altA,tA), freshness(tA, true))).
 
-(* A generic Receiver *)  
+(* Authority*)  
 
 let auth (pAuth:skey, PAuth:pkey) = 
   (*UAV Registration*)
